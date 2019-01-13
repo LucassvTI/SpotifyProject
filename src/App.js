@@ -1,5 +1,6 @@
 import React from "react";
-//import { Router } from "react-router";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 import GlobalStyle from "./styles/global";
 
@@ -9,21 +10,26 @@ import Header from "./components/Header";
 
 import { Wrapper, Container, Content } from "./styles/components";
 
-//import Routes from "./routes";
+import Routes from "./routes";
+import store from "./store";
 
 const App = () => (
   <React.Fragment>
     <GlobalStyle />
-
-    <Wrapper>
-      <Container>
-        <Sidebar />
-        <Content>
-          <Header />
-        </Content>
-      </Container>
-      <Player />
-    </Wrapper>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Wrapper>
+          <Container>
+            <Sidebar />
+            <Content>
+              <Header />
+              <Routes />
+            </Content>
+          </Container>
+          <Player />
+        </Wrapper>
+      </BrowserRouter>
+    </Provider>
   </React.Fragment>
 );
 
