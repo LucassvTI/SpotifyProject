@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import GlobalStyle from "./styles/global";
+import "./config/reactotron";
 
 import Sidebar from "./components/Sidebar";
 import Player from "./components/Player";
